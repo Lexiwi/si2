@@ -106,7 +106,8 @@ public class VisaDAO extends DBTester {
         } else {
             directConnectionCount++;
             // Obtener una nueva conexión
-            return DriverManager.getConnection("jdbc:postgresql://10.5.6.3:5432/visa", "alumnodb", "alumnodb");
+            return DriverManager.getConnection("jdbc:postgresql://10.5.6.3:5432/visa", 
+            									"alumnodb", "alumnodb");
         }
     }
 
