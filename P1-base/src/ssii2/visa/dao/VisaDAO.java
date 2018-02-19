@@ -182,7 +182,7 @@ public class VisaDAO extends DBTester {
             /**************************************************/
             if (isPrepared() == true) {
                String select  = SELECT_TARJETA_QRY;
-               errorLog(select);
+               errorLog(select);                                         /**********************************/
                pstmt = con.prepareStatement(select);
                pstmt.setString(1, tarjeta.getNumero());
                pstmt.setString(2, tarjeta.getTitular());
@@ -195,7 +195,7 @@ public class VisaDAO extends DBTester {
             /**************************************************/
             stmt = con.createStatement();
             qry = getQryCompruebaTarjeta(tarjeta);
-            errorLog(qry);
+            errorLog(qry);                                                    /**********************************/
             rs = stmt.executeQuery(qry);
 
             } /**********************/
@@ -204,7 +204,7 @@ public class VisaDAO extends DBTester {
             ret = rs.next();
 
         } catch (Exception ee) {
-            errorLog(ee.toString());
+            errorLog(ee.toString());                                                   /**********************************/
             ret = false;
         } finally {
             try {
@@ -263,7 +263,7 @@ public class VisaDAO extends DBTester {
             /**************************************************/
             if (isPrepared() == true) {
                String insert  = INSERT_PAGOS_QRY;
-               errorLog(insert);
+               errorLog(insert);                                            /**********************************/
                pstmt = con.prepareStatement(insert);
                pstmt.setString(1, pago.getIdTransaccion());
                pstmt.setDouble(2, pago.getImporte());
@@ -279,7 +279,7 @@ public class VisaDAO extends DBTester {
             /**************************************************/
             stmt = con.createStatement();
             String insert = getQryInsertPago(pago);
-            errorLog(insert);
+            errorLog(insert);                                                   /**********************************/
             ret = false;
             if (!stmt.execute(insert)
                     && stmt.getUpdateCount() == 1) {
@@ -295,7 +295,7 @@ public class VisaDAO extends DBTester {
                 /**************************************************/
                 if (isPrepared() == true) {
                     String select = SELECT_PAGO_TRANSACCION_QRY;
-                    errorLog(select);
+                    errorLog(select);                                                /**********************************/
                     pstmt = con.prepareStatement(select);
                     pstmt.setString(1, pago.getIdTransaccion());
                     pstmt.setString(2, pago.getIdComercio());
@@ -304,7 +304,7 @@ public class VisaDAO extends DBTester {
                 /**************************************************/
 
                     String select = getQryBuscaPagoTransaccion(pago);
-                    errorLog(select);
+                    errorLog(select);                                                /**********************************/
                     rs = stmt.executeQuery(select);
                     
                 }/*************************************/
@@ -318,7 +318,7 @@ public class VisaDAO extends DBTester {
             }
 
         } catch (Exception e) {
-            errorLog(e.toString());
+            errorLog(e.toString());                                                   /**********************************/
             ret = false;
         } finally {
             try {
@@ -361,7 +361,7 @@ public class VisaDAO extends DBTester {
             // Crear una conexion u obtenerla del pool
             pcon = getConnection();
             qry = SELECT_PAGOS_QRY;
-            errorLog(qry + "[idComercio=" + idComercio + "]");
+            errorLog(qry + "[idComercio=" + idComercio + "]");                            /**********************************/
 
             // La preparacion del statement
             // es automaticamente tomada de un pool en caso
@@ -394,7 +394,7 @@ public class VisaDAO extends DBTester {
             pcon.close();
 
         } catch (Exception e) {
-            errorLog(e.toString());
+            errorLog(e.toString());                                  /**********************************/
 
         } finally {
             try {
@@ -433,7 +433,7 @@ public class VisaDAO extends DBTester {
             // Crear una conexion u obtenerla del pool
             pcon = getConnection();
             qry = DELETE_PAGO_QRY;
-            errorLog(qry + "[idComercio=" + idComercio + "]");
+            errorLog(qry + "[idComercio=" + idComercio + "]");                          /**********************************/
 
             // La preparacion del statement
             // es automaticamente tomada de un pool en caso
@@ -446,7 +446,7 @@ public class VisaDAO extends DBTester {
             pcon.close();
 
         } catch (Exception e) {
-            errorLog(e.toString());
+            errorLog(e.toString());                                                  /**********************************/
 
         } finally {
             try {
@@ -507,7 +507,7 @@ public class VisaDAO extends DBTester {
     public void errorLog(String error) {
         if (isDebug())
             System.err.println("[directConnection=" + this.isDirectConnection() +"] " +
-                               error);
+                               error);                                                      /**********************************/
     }
 
 }
