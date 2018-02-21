@@ -499,6 +499,7 @@ public class VisaDAOWS extends DBTester {
      * @return pool 
      **/
     @Override
+    @WebMethod(operationName = "isDirectConnection")
     public boolean isDirectConnection(){
         return super.isDirectConnection();
     }
@@ -507,6 +508,7 @@ public class VisaDAOWS extends DBTester {
      * @param directConnection valor de conexión directa o indirecta
      **/
     @Override
+    @WebMethod(operationName = "setDirectConnection")
     public void setDirectConnection(@WebParam(name = "directConnection")boolean directConnection) {
         super.directConnection = directConnection;
     }
@@ -533,8 +535,7 @@ public class VisaDAOWS extends DBTester {
     /**
      * @param debug the debug to set
      */
-    @WebMethod(exclude="true")
-    public void setDebug(String debug) {
+    public void setDebugS(String debug) {
         this.debug = (debug.equals("true"));
     }
 
