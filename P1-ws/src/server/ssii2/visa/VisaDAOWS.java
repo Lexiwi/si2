@@ -241,7 +241,7 @@ public class VisaDAOWS extends DBTester {
      * @return
      */
     @WebMethod(operationName = "realizaPago")
-    public synchronized boolean realizaPago(@WebParam(name="pago")PagoBean pago) {
+    public synchronized PagoBean realizaPago(@WebParam(name="pago")PagoBean pago) {
         Connection con = null;
         Statement stmt = null;
         ResultSet rs = null;
@@ -255,7 +255,7 @@ public class VisaDAOWS extends DBTester {
         // Comprobar id.transaccion - si no existe,
         // es que la tarjeta no fue comprobada
         if (pago.getIdTransaccion() == null) {
-            return false;
+            return null;
         }
 
         // Registrar el pago en la base de datos
@@ -346,7 +346,11 @@ public class VisaDAOWS extends DBTester {
             }
         }
 
-        return ret;
+        if(ret == false){
+            return null;
+        }
+
+        return pago;
     }
 
 
@@ -495,7 +499,6 @@ public class VisaDAOWS extends DBTester {
      * @return pool 
      **/
     @Override
-    @WebMethod(operationName = "isDirectConnection")
     public boolean isDirectConnection(){
         return super.isDirectConnection();
     }
@@ -504,7 +507,6 @@ public class VisaDAOWS extends DBTester {
      * @param directConnection valor de conexión directa o indirecta
      **/
     @Override
-    @WebMethod(operationName = "setDirectConnection")
     public void setDirectConnection(@WebParam(name = "directConnection")boolean directConnection) {
         super.directConnection = directConnection;
     }
