@@ -88,34 +88,35 @@ public class VisaDAOWS extends DBTester {
      */
     public VisaDAOWS() {
 
-        try {
+     //   try {
 
             // Para conexiones directas, instanciamos el driver
-            Class.forName("org.postgresql.Driver").newInstance();
+      //      Class.forName("org.postgresql.Driver").newInstance();
 
             // Para conexiones con pool, preparamos un datasource
             // Buscar el datasource por JNDI
-            ds = (DataSource) new InitialContext().lookup(JDBC_DSN);
+      //      ds = (DataSource) new InitialContext().lookup(JDBC_DSN);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+      //  } catch (Exception e) {
+       //     e.printStackTrace();
+        //}
+            return;
     }
 
-    protected synchronized Connection getConnection()
-            throws SQLException {
+  //  protected synchronized Connection getConnection()
+    //        throws SQLException {
 
-        if (!directConnection) {
-            dsConnectionCount++;
+      //  if (!directConnection) {
+        //    dsConnectionCount++;
             // Obtener una conexión del pool
-            return ds.getConnection();
-        } else {
-            directConnectionCount++;
+      //      return ds.getConnection();
+       // } else {
+         //   directConnectionCount++;
             // Obtener una nueva conexión
-            return DriverManager.getConnection("jdbc:postgresql://10.5.6.3:5432/visa", 
-            									"alumnodb", "alumnodb");
-        }
-    }
+           // return DriverManager.getConnection("jdbc:postgresql://10.5.6.3:5432/visa", 
+            						//			"alumnodb", "alumnodb");
+        //}
+   // }
 
 
     /**
@@ -488,7 +489,7 @@ public class VisaDAOWS extends DBTester {
     }
 
     @WebMethod(operationName="setPrepared")
-    public void setPrepared(boolean prepared) {
+    public void setPrepared(@WebParam(name="prepared")boolean prepared) {
         this.prepared = prepared;
     }
     /********************************************************/
@@ -507,7 +508,7 @@ public class VisaDAOWS extends DBTester {
     /**
      * @param directConnection valor de conexión directa o indirecta
      **/
-    //@Override
+    /*@Override*/
     @WebMethod(operationName = "setDirectConnection")
     public void setDirectConnection(@WebParam(name = "directConnection")boolean directConnection) {
         super.directConnection = directConnection;
@@ -528,7 +529,7 @@ public class VisaDAOWS extends DBTester {
      * @param debug the debug to set
      */
     @WebMethod(operationName="setDebug")
-    public void setDebug(boolean debug) {
+    public void setDebug(@WebParam(name="debug")boolean debug) {
         this.debug = debug;
     }
 
