@@ -32,7 +32,7 @@ import javax.jws.WebService;
  */
 
 /*@WebService(serviceName = "VisaDAO")*/
-@WebService
+@WebService()
 public class VisaDAOWS extends DBTester {
 
     private boolean debug = false;
@@ -167,7 +167,7 @@ public class VisaDAOWS extends DBTester {
      * @return true si la comprobacion contra las tarjetas contenidas en
      *         en la tabla TARJETA fue satisfactoria, false en caso contrario     */
     @WebMethod(operationName = "compruebaTarjeta")
-    public boolean compruebaTarjeta(@WebParam(name="tarjeta")TarjetaBean tarjeta) {
+    public boolean compruebaTarjeta(@WebParam(name="tarjeta") TarjetaBean tarjeta) {
         Connection con = null;
         Statement stmt = null;
         ResultSet rs = null;
@@ -241,7 +241,7 @@ public class VisaDAOWS extends DBTester {
      * @return
      */
     @WebMethod(operationName = "realizaPago")
-    public synchronized PagoBean realizaPago(@WebParam(name="pago")PagoBean pago) {
+    public synchronized PagoBean realizaPago(@WebParam(name="pago") PagoBean pago) {
         Connection con = null;
         Statement stmt = null;
         ResultSet rs = null;
@@ -507,7 +507,7 @@ public class VisaDAOWS extends DBTester {
     /**
      * @param directConnection valor de conexión directa o indirecta
      **/
-    @Override
+    //@Override
     @WebMethod(operationName = "setDirectConnection")
     public void setDirectConnection(@WebParam(name = "directConnection")boolean directConnection) {
         super.directConnection = directConnection;

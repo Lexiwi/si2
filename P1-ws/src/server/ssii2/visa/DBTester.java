@@ -123,9 +123,10 @@ public class DBTester {
     /**
      * @param directConnection valor de conexión directa o indirecta
      */
+    /*
     public void setDirectConnection(boolean directConnection) {
         this.directConnection = directConnection;
-    }
+    }*/
 
 
 }
