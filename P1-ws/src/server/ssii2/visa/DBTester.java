@@ -15,7 +15,7 @@ import javax.jws.WebService;
  *
  * @author jaime
  */
-@WebService()
+
 public class DBTester {
 
     // Información de conexión
@@ -123,11 +123,10 @@ public class DBTester {
     /**
      * @param directConnection valor de conexión directa o indirecta
      */
-    
-    /*WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY*/
-    /*public void setDirectConnection(boolean directConnection) {
+
+    public void setDirectConnection(boolean directConnection) {
         this.directConnection = directConnection;
-    }*/
+    }
 
 
 }
