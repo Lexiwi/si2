@@ -66,8 +66,12 @@ public class GetPagos extends ServletRaiz {
 		
 		/* Petici&oacute;n de los pagos para el comercio */
         
-		//PagoBean[] pagos = dao.getPagos(idComercio);
-        PagoBean[] pagos = (PagoBean[])dao.getPagos(idComercio).toArray();        
+		List<PagoBean> listaPagos = dao.getPagos(idComercio);
+        ArrayList<PagoBean> arrayPagos = new ArrayList<PagoBean>(listaPagos.size());
+        arrayPagos.addAll(listaPagos);
+
+        PagoBean[] pagos = new PagoBean[arrayPagos.size()];
+        pagos = arrayPagos.toArray(pagos);        
 
         request.setAttribute(ATTR_PAGOS, pagos);
         reenvia("/listapagos.jsp", request, response);
