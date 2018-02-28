@@ -23,6 +23,9 @@ import ssii2.visa.VisaDAOWS; // Stub generado automáticamente
 import javax.xml.ws.WebServiceRef;
 import javax.xml.ws.*;
 
+import java.util.*;
+
+
 /**
  *
  * @author phaya
