@@ -47,15 +47,20 @@ import ssii2.visa.*;
 //import ssii2.visa.dao.VisaDAO;
 
 //import ssii2.visa.VisaDAOWSService; // Stub generado automáticamente
-import ssii2.visa.VisaDAOWS; // Stub generado automáticamente
+//import ssii2.visa.VisaDAOWS; // Stub generado automáticamente
 import javax.xml.ws.WebServiceRef;
 import javax.xml.ws.*;
+
+import javax.ejb.EJB;
+import ssii2.visa.VisaDAOLocal
+;
 /**
  *
  * @author phaya
  */
 public class ProcesaPago extends ServletRaiz {
-
+    @EJB(name="VisaDAOBean", beanInterface=VisaDAOLocal.class)
+    private VisaDAOLocal dao;
    
     /** 
      * Par&aacute;metro que indica el identificador de transacci&oacute;n
@@ -154,11 +159,11 @@ private void printAddresses(HttpServletRequest request, HttpServletResponse resp
 
 		//VisaDAO dao = new VisaDAO();  // --- ANTIGUO
         //////////////////////////////////////////////////////////////////////////////////////////////////////
-        VisaDAOWSService service = new VisaDAOWSService();
-        VisaDAOWS dao = service.getVisaDAOWSPort ();
+        //VisaDAOWSService service = new VisaDAOWSService();
+        //VisaDAOWS dao = service.getVisaDAOWSPort ();
 
-        BindingProvider bp = (BindingProvider) dao;
-        bp.getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY,getServletContext().getInitParameter("webmaster"));
+        //BindingProvider bp = (BindingProvider) dao;
+        //bp.getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY,getServletContext().getInitParameter("webmaster"));
         //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 

@@ -26,14 +26,15 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
+import javax.ejb.Stateless;
 
 /**
  * @author jaime
  */
 
-/*@WebService(serviceName = "VisaDAO")*/
-/*@WebService()*/
-public class VisaDAOBean extends DBTester {
+
+@Stateless(mappedName="VisaDAOBean")
+public class VisaDAOBean extends DBTester implements VisaDAOLocal {
 
     private boolean debug = false;
 
@@ -88,18 +89,6 @@ public class VisaDAOBean extends DBTester {
      */
     public VisaDAOBean() {
 
-     //   try {
-
-            // Para conexiones directas, instanciamos el driver
-      //      Class.forName("org.postgresql.Driver").newInstance();
-
-            // Para conexiones con pool, preparamos un datasource
-            // Buscar el datasource por JNDI
-      //      ds = (DataSource) new InitialContext().lookup(JDBC_DSN);
-
-      //  } catch (Exception e) {
-       //     e.printStackTrace();
-        //}
             return;
     }
 
@@ -366,12 +355,13 @@ public class VisaDAOBean extends DBTester {
     /*@WebMethod(operationName = "getPagos")
     public ArrayList<PagoBean> getPagos(@WebParam(name="idComercio")String idComercio) {*/
 
-    public ArrayList<PagoBean> getPagos(String idComercio) {
+    public PagoBean[] getPagos(String idComercio) {
         PreparedStatement pstmt = null;
         Connection pcon = null;
         ResultSet rs = null;
         //PagoBean[] ret = null;
         ArrayList<PagoBean> pagos = null;
+        PagoBean[] ret = null;
         String qry = null;
 
         try {
@@ -391,6 +381,7 @@ public class VisaDAOBean extends DBTester {
 
             pagos = new ArrayList<PagoBean>();
 
+
             while (rs.next()) {
                 TarjetaBean t = new TarjetaBean();
                 PagoBean p = new PagoBean();
@@ -405,10 +396,12 @@ public class VisaDAOBean extends DBTester {
                 pagos.add(p);
             }
 
-            //ret = new PagoBean[pagos.size()];
-            //ret = pagos.toArray(ret);
+            ret = new PagoBean[pagos.size()];
+            ret = pagos.toArray(ret);
 
             // Cerramos / devolvemos la conexion al pool
+
+
             pcon.close();
 
         } catch (Exception e) {
@@ -429,8 +422,8 @@ public class VisaDAOBean extends DBTester {
             }
         }
 
-        //return ret;
-        return pagos;
+        return ret;
+        //return pagos;
     }
 
     // Borrar los pagos asociados a un comercio
