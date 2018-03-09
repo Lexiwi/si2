@@ -27,7 +27,7 @@ import javax.jws.WebParam;
 import javax.jws.WebService;
 
 import javax.ejb.Stateless;
-import javax.ejb.EJBException
+import javax.ejb.EJBException;
 
 /**
  * @author jaime
@@ -90,11 +90,7 @@ public class VisaDAOBean extends DBTester implements VisaDAOLocal {
         private static final String SET_SALDO = 
                     "update tarjeta " +
                     "set saldo=? " +
-                    "where numeroTarjeta=? " +
-                    " and titular=? " +
-                    " and validaDesde=? " +
-                    " and validaHasta=? " +
-                    " and codigoVerificacion=? ";
+                    "where numeroTarjeta=?";
     /**************************************************/
 
     
@@ -286,48 +282,52 @@ public class VisaDAOBean extends DBTester implements VisaDAOLocal {
                pstmt = con.prepareStatement(pst_saldo);
                pstmt.setString(1, pago.getTarjeta().getNumero());
                rs = pstmt.executeQuery();
-               
-               saldo = rs.getDouble("saldo");
-               if(saldo >= pago.getImporte()) {
-                    /* Si el saldo es mayor que el importe a pagar */
-                    /* insertamos el pago                          */
-                    String insert  = INSERT_PAGOS_QRY;
-                    errorLog(insert);                                            /**********************************/
-                    pstmt = con.prepareStatement(insert);
-                    
-                    pstmt.setString(1, pago.getIdTransaccion());
-                    pstmt.setDouble(2, pago.getImporte());
-                    pstmt.setString(3, pago.getIdComercio());
-                    pstmt.setString(4, pago.getTarjeta().getNumero());
-                    
-                    ret = false;
-                    if (!pstmt.execute()
-                            && pstmt.getUpdateCount() == 1) {
-                      ret = true;
-                    }
-                    
-                    String set_saldo  = SET_SALDO;
-                    errorLog(set_saldo);                                            /**********************************/
-                    pstmt = con.prepareStatement(set_saldo);
-                    
-                    pstmt.setDouble(1,saldo - pago.getImporte() );
-                    pstmt.setString(2, pago.getTarjeta().getNumero());
+               if(rs.next()){
+                   saldo = rs.getDouble("saldo");
+                   if(saldo >= pago.getImporte()) {
+                        /* Si el saldo es mayor que el importe a pagar */
+                        /* insertamos el pago                          */
+                        String insert  = INSERT_PAGOS_QRY;
+                        errorLog(insert);                                            /**********************************/
+                        pstmt = con.prepareStatement(insert);
+                        
+                        pstmt.setString(1, pago.getIdTransaccion());
+                        pstmt.setDouble(2, pago.getImporte());
+                        pstmt.setString(3, pago.getIdComercio());
+                        pstmt.setString(4, pago.getTarjeta().getNumero());
+                        
+                        ret = false;
+                        if (!pstmt.execute()
+                                && pstmt.getUpdateCount() == 1) {
+                          ret = true;
+                        }
+                        
+                        String set_saldo  = SET_SALDO;
+                        errorLog(set_saldo);                                            /**********************************/
+                        pstmt = con.prepareStatement(set_saldo);
+                        saldo -= pago.getImporte();
+                        pstmt.setDouble(1,saldo);
+                        pstmt.setString(2, pago.getTarjeta().getNumero());
+                        pstmt.executeUpdate();
 
-               } else {
-                   pago.setIdAutorizacion(null);
-                   ret = false;
-               }
+
+                   } else {
+                       pago.setIdAutorizacion(null);
+                       pago = null;
+                       throw new EJBException("Error en el pago");
+                   }
+                }
 
             } else {            
             /**************************************************/
-            stmt = con.createStatement();
-            String insert = getQryInsertPago(pago);
-            errorLog(insert);                                                   /**********************************/
-            ret = false;
-            if (!stmt.execute(insert)
-                    && stmt.getUpdateCount() == 1) {
-                ret = true;
-			}
+                stmt = con.createStatement();
+                String insert = getQryInsertPago(pago);
+                errorLog(insert);                                                   /**********************************/
+                ret = false;
+                if (!stmt.execute(insert)
+                        && stmt.getUpdateCount() == 1) {
+                    ret = true;
+    		    }
             }/****************/
 
             // Obtener id.autorizacion
