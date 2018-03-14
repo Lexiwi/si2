@@ -54,7 +54,7 @@ public class VisaCancelacionJMSBean extends DBTester implements MessageListener 
   private static final String SELECT_TARJETA_SALDO_QRY = 
                     "select saldo" +
                     " from tarjeta" +
-                    " where idAutorizacion = ?";
+                    " where numeroTarjeta = ?";
 
 
 
@@ -76,7 +76,7 @@ public class VisaCancelacionJMSBean extends DBTester implements MessageListener 
 
       int idAutorizacion = 0;
       String numTarjeta = null;
-      float importe = 0;
+      double importe = 0;
       double saldo = 0;
 
       try {
@@ -91,7 +91,6 @@ public class VisaCancelacionJMSBean extends DBTester implements MessageListener 
               pstmt = con.prepareStatement(query);
               idAutorizacion = Integer.parseInt(msg.getText());
               pstmt.setInt(1, idAutorizacion);
-              rs = pstmt.executeQuery();
               if (!pstmt.execute() && pstmt.getUpdateCount() == 1) {
                   ret = true;
               }
@@ -106,22 +105,24 @@ public class VisaCancelacionJMSBean extends DBTester implements MessageListener 
                 numTarjeta = rs.getString("numeroTarjeta");
               }
 
+
+              query = SELECT_TARJETA_SALDO_QRY;
+              logger.info(query);
+              pstmt = con.prepareStatement(query);
+              pstmt.setString(1, numTarjeta);
+              rs = pstmt.executeQuery();
+              if(rs.next()){
+                saldo = rs.getDouble("saldo");
+              }
+
+
               query = SELECT_PAGO_IMPORTE_QRY;
               logger.info(query);
               pstmt = con.prepareStatement(query);
               pstmt.setInt(1, idAutorizacion);
               rs = pstmt.executeQuery();
               if(rs.next()){
-                importe = rs.getFloat("importe");
-              }
-
-              query = SELECT_TARJETA_SALDO_QRY;
-              logger.info(query);
-              pstmt = con.prepareStatement(query);
-              pstmt.setInt(1, idAutorizacion);
-              rs = pstmt.executeQuery();
-              if(rs.next()){
-                saldo = rs.getDouble("saldo");
+                importe = rs.getDouble("importe");
               }
 
               saldo += importe;
@@ -132,7 +133,6 @@ public class VisaCancelacionJMSBean extends DBTester implements MessageListener 
               pstmt.setDouble(1, saldo);
               pstmt.setString(2, numTarjeta);
               pstmt.executeUpdate();
-
 
           } else {
               logger.warning(
