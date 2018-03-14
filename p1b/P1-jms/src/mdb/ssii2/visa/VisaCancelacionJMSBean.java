@@ -124,7 +124,7 @@ public class VisaCancelacionJMSBean extends DBTester implements MessageListener 
                 saldo = rs.getDouble("saldo");
               }
 
-              saldo += (double)importe;
+              saldo += importe;
 
               query = UPDATE_CANCELA_QRY;
               logger.info(query);
