@@ -11,7 +11,7 @@
  */
 
 package ssii2.visa.dao;
-import ssii2.visa.*;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,6 +27,9 @@ import javax.jws.WebParam;
 import javax.jws.WebService;
 
 import javax.ejb.Stateless;
+import ssii2.visa.PagoBean;
+import ssii2.visa.TarjetaBean;
+import ssii2.visa.VisaDAOLocal;
 
 /**
  * @author jaime
