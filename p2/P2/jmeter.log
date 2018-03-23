@@ -1,0 +1,107 @@
+2018-03-23 10:17:15,717 INFO o.a.j.u.JMeterUtils: Setting Locale to es_ES
+2018-03-23 10:17:15,727 INFO o.a.j.u.JMeterUtils: Could not find resources for 'es_ES', using 'es'
+2018-03-23 10:17:15,728 INFO o.a.j.JMeter: Loading user properties from: /home/alumnos/e336869/Desktop/si2/p2/apache-jmeter-4.0/bin/user.properties
+2018-03-23 10:17:15,728 INFO o.a.j.JMeter: Loading system properties from: /home/alumnos/e336869/Desktop/si2/p2/apache-jmeter-4.0/bin/system.properties
+2018-03-23 10:17:15,731 INFO o.a.j.JMeter: Copyright (c) 1998-2018 The Apache Software Foundation
+2018-03-23 10:17:15,731 INFO o.a.j.JMeter: Version 4.0 r1823414
+2018-03-23 10:17:15,731 INFO o.a.j.JMeter: java.version=1.8.0_131
+2018-03-23 10:17:15,732 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2018-03-23 10:17:15,732 INFO o.a.j.JMeter: os.name=Linux
+2018-03-23 10:17:15,732 INFO o.a.j.JMeter: os.arch=amd64
+2018-03-23 10:17:15,732 INFO o.a.j.JMeter: os.version=3.13.0-24-generic
+2018-03-23 10:17:15,732 INFO o.a.j.JMeter: file.encoding=UTF-8
+2018-03-23 10:17:15,732 INFO o.a.j.JMeter: Max memory     =1726480384
+2018-03-23 10:17:15,732 INFO o.a.j.JMeter: Available Processors =4
+2018-03-23 10:17:15,737 INFO o.a.j.JMeter: Default Locale=español (España)
+2018-03-23 10:17:15,737 INFO o.a.j.JMeter: JMeter  Locale=español (España)
+2018-03-23 10:17:15,737 INFO o.a.j.JMeter: JMeterHome=/home/alumnos/e336869/Desktop/si2/p2/apache-jmeter-4.0
+2018-03-23 10:17:15,737 INFO o.a.j.JMeter: user.dir  =/home/alumnos/e336869/Desktop/si2/p2/P2
+2018-03-23 10:17:15,737 INFO o.a.j.JMeter: PWD       =/home/alumnos/e336869/Desktop/si2/p2/P2
+2018-03-23 10:17:15,738 INFO o.a.j.JMeter: IP: 127.0.0.1 Name: localhost FullName: localhost
+2018-03-23 10:17:15,873 INFO o.a.j.g.a.LookAndFeelCommand: Installing Darcula LAF
+2018-03-23 10:17:15,896 INFO o.a.j.g.a.LookAndFeelCommand: Using look and feel: com.bulenkov.darcula.DarculaLaf [Darcula]
+2018-03-23 10:17:15,896 INFO o.a.j.JMeter: Setting LAF to: com.bulenkov.darcula.DarculaLaf
+2018-03-23 10:17:15,933 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2018-03-23 10:17:16,267 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2018-03-23 10:17:16,267 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2018-03-23 10:17:17,331 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-03-23 10:17:17,332 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-03-23 10:17:17,332 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-03-23 10:17:17,332 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-03-23 10:17:17,332 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2018-03-23 10:17:17,332 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2018-03-23 10:17:17,538 INFO o.a.j.e.KeyToolUtils: keytool found at 'keytool'
+2018-03-23 10:17:17,538 INFO o.a.j.p.h.p.ProxyControl: HTTP(S) Test Script Recorder SSL Proxy will use keys that support embedded 3rd party resources in file /home/alumnos/e336869/Desktop/si2/p2/apache-jmeter-4.0/bin/proxyserver.jks
+2018-03-23 10:17:17,614 INFO o.a.j.s.FileServer: Default base='/home/alumnos/e336869/Desktop/si2/p2/P2'
+2018-03-23 10:17:17,808 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2018-03-23 10:17:17,808 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2018-03-23 10:17:17,808 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2018-03-23 10:17:17,808 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2018-03-23 10:17:26,308 INFO o.a.j.g.a.Load: Loading file: /home/alumnos/e336869/Desktop/si2/p2/P2/P2.jmx
+2018-03-23 10:17:26,309 INFO o.a.j.s.FileServer: Set new base='/home/alumnos/e336869/Desktop/si2/p2/P2'
+2018-03-23 10:17:26,391 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2018-03-23 10:17:26,399 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2018-03-23 10:17:26,400 INFO o.a.j.s.SaveService: Using SaveService properties version 4.0
+2018-03-23 10:17:26,402 INFO o.a.j.s.SaveService: Loading file: /home/alumnos/e336869/Desktop/si2/p2/P2/P2.jmx
+2018-03-23 10:17:26,498 INFO o.a.j.s.FileServer: Set new base='/home/alumnos/e336869/Desktop/si2/p2/P2'
+2018-03-23 10:18:40,928 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2018-03-23 10:18:40,929 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2018-03-23 10:18:40,929 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2018-03-23 10:18:40,935 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2018-03-23 10:18:41,055 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : P1-base
+2018-03-23 10:18:41,055 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group P1-base.
+2018-03-23 10:18:41,055 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2018-03-23 10:18:41,055 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=5 perThread=5000.0 delayedStart=false
+2018-03-23 10:18:41,058 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2018-03-23 10:18:41,058 INFO o.a.j.e.StandardJMeterEngine: Waiting for thread group: P1-base to finish before starting next group
+2018-03-23 10:18:41,060 INFO o.a.j.t.JMeterThread: Thread started: P1-base 1-1
+2018-03-23 10:18:41,062 INFO o.a.j.s.FileServer: Stored: datagen/listado.csv
+2018-03-23 10:18:41,068 INFO o.a.j.p.h.s.HTTPJavaImpl: Maximum connection retries = 0
+2018-03-23 10:18:52,704 INFO o.a.j.t.JMeterThread: Thread is done: P1-base 1-1
+2018-03-23 10:18:52,704 INFO o.a.j.t.JMeterThread: Thread finished: P1-base 1-1
+2018-03-23 10:18:52,705 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 2 : P1-ws
+2018-03-23 10:18:52,705 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group P1-ws.
+2018-03-23 10:18:52,705 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2018-03-23 10:18:52,705 INFO o.a.j.t.ThreadGroup: Starting thread group... number=2 threads=1 ramp-up=5 perThread=5000.0 delayedStart=false
+2018-03-23 10:18:52,706 INFO o.a.j.t.ThreadGroup: Started thread group number 2
+2018-03-23 10:18:52,706 INFO o.a.j.e.StandardJMeterEngine: Waiting for thread group: P1-ws to finish before starting next group
+2018-03-23 10:18:52,707 INFO o.a.j.t.JMeterThread: Thread started: P1-ws 2-1
+2018-03-23 10:19:06,983 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 0.9090909
+2018-03-23 10:19:07,583 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 0.9090909
+2018-03-23 10:19:08,231 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 0.9090909
+2018-03-23 10:19:08,615 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 0.9090909
+2018-03-23 10:19:08,879 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 0.9090909
+2018-03-23 10:19:09,071 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 0.9090909
+2018-03-23 10:19:09,223 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 0.9090909
+2018-03-23 10:19:09,439 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 0.9090909
+2018-03-23 10:19:09,839 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 0.9090909
+2018-03-23 10:19:09,903 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 0.9090909
+2018-03-23 10:19:09,984 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 0.9090909
+2018-03-23 10:19:10,087 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 0.9090909
+2018-03-23 10:19:12,384 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 1.1
+2018-03-23 10:19:12,425 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 1.1
+2018-03-23 10:19:12,474 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 1.1
+2018-03-23 10:19:12,500 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 1.1
+2018-03-23 10:19:12,541 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 1.1
+2018-03-23 10:19:12,640 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 1.1
+2018-03-23 10:19:13,432 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 1.1
+2018-03-23 10:19:14,079 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 0.9090909
+2018-03-23 10:19:15,344 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 1.1
+2018-03-23 10:19:15,967 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 0.9090909
+2018-03-23 10:19:17,367 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 1.1
+2018-03-23 10:19:17,431 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 1.1
+2018-03-23 10:19:18,399 INFO o.a.j.u.JMeterUtils: Applying HiDPI scale: 0.9090909
+2018-03-23 10:19:43,778 INFO o.a.j.t.JMeterThread: Thread is done: P1-ws 2-1
+2018-03-23 10:19:43,778 INFO o.a.j.t.JMeterThread: Thread finished: P1-ws 2-1
+2018-03-23 10:19:43,778 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 3 : P1-ejb
+2018-03-23 10:19:43,778 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group P1-ejb.
+2018-03-23 10:19:43,778 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2018-03-23 10:19:43,778 INFO o.a.j.t.ThreadGroup: Starting thread group... number=3 threads=1 ramp-up=5 perThread=5000.0 delayedStart=false
+2018-03-23 10:19:43,779 INFO o.a.j.t.ThreadGroup: Started thread group number 3
+2018-03-23 10:19:43,779 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2018-03-23 10:19:43,779 INFO o.a.j.t.JMeterThread: Thread started: P1-ejb 3-1
+2018-03-23 10:19:56,089 INFO o.a.j.t.JMeterThread: Thread is done: P1-ejb 3-1
+2018-03-23 10:19:56,089 INFO o.a.j.t.JMeterThread: Thread finished: P1-ejb 3-1
+2018-03-23 10:19:56,089 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2018-03-23 10:19:56,089 INFO o.a.j.s.FileServer: Close: datagen/listado.csv
+2018-03-23 10:19:56,090 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
