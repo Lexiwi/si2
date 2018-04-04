@@ -4,7 +4,7 @@
 	<ejb-ref>
 		<ejb-ref-name>VisaDAOBean</ejb-ref-name>
 		<jndi-name>
-			corbaname:iiop:10.5.6.3:3700#java:global/P1-ejb/P1-ejb/VisaDAOBean!ssii2.visa.VisaDAORemote
+			corbaname:iiop:10.5.6.1:3700#java:global/P1-ejb/P1-ejb/VisaDAOBean!ssii2.visa.VisaDAORemote
 		</jndi-name>
 	</ejb-ref>
 </glassfish-web-app>
