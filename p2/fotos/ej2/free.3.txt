@@ -1,6 +1,0 @@
-si2@si2srv03:~$ free
-             total       used       free     shared    buffers     cached
-Mem:        767168     484836     282332          0      18892     151544
--/+ buffers/cache:     314400     452768
-Swap:       153592          0     153592
-
