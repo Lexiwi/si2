@@ -6,8 +6,6 @@ titular            varchar(128) not null,
 validaDesde        char(5) not null,
 validaHasta        char(5) not null,
 codigoVerificacion char(3) not null,
-instancia VARCHAR(50) not null,
-ip VARCHAR(50) not null,
 PRIMARY KEY (numeroTarjeta)
 );
 
@@ -26,6 +24,8 @@ importe        float    not null,
 idComercio     char(16) not null,
 numeroTarjeta  char(19) not null references tarjeta,
 fecha          timestamp not null default current_timestamp,
+instancia      VARCHAR(50) not null,
+ip      VARCHAR(50) not null,
 CONSTRAINT     Pago_UC  unique(idTransaccion, idComercio),
 PRIMARY KEY (idAutorizacion)
 );

@@ -22,10 +22,10 @@ public class DBTester {
     // TODO: Definir la cadena de conexion a la base de datos
     /*********************************************************/
     private static final String JDBC_CONNSTRING =
-            "jdbc:derby://10.5.6.1:5432/visa;create=true";
+            "jdbc:derby://10.1.1.1:1527/visa;create=true";
     /*********************************************************/
-    private static final String JDBC_USER = "alumnodb";
-    private static final String JDBC_PASSWORD = "";
+    private static final String JDBC_USER = "APP";
+    private static final String JDBC_PASSWORD = "APP";
 
     // Para conexión por datasource, sólo necesitamos su nombre
     // TODO: Definir el nombre del datasource
@@ -111,6 +111,7 @@ public class DBTester {
     /**
      * @return the pooled
      */
+    @WebMethod(operationName = "isDirectConnection")
     public boolean isDirectConnection() {
         return directConnection;
     }
@@ -118,6 +119,7 @@ public class DBTester {
     /**
      * @param directConnection valor de conexión directa o indirecta
      */
+    @WebMethod(operationName = "setDirectConnection")
     public void setDirectConnection(boolean directConnection) {
         this.directConnection = directConnection;
     }

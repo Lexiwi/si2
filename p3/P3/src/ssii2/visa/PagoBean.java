@@ -16,18 +16,15 @@ public class PagoBean {
 	private String idTransaccion; 
 	private String idComercio;  
 	private double importe;
-    private String ruta_retorno;
-    
-    private TarjetaBean tarjeta;
-    
-    /* Calculados por el gestor de medios de pago */
-    private String codRespuesta;    
+        private String ruta_retorno;
         
-    private String idAutorizacion;
-    /**********************************/
-    private String instancia;
-    private String ip;
-    /**********************************/  
+        private TarjetaBean tarjeta;
+        
+        /* Calculados por el gestor de medios de pago */
+        private String codRespuesta;    
+        private String idAutorizacion;
+        private String instancia;
+        private String ip;  
 
     /**
      * @return el ID de transacci&oacute;n
@@ -141,31 +138,18 @@ public class PagoBean {
         this.tarjeta = tarjeta;
     }
 
-    /**
-     * @return la ip
-     */
     public String getInstancia() {
         return this.instancia;
     }
 
-    /**
-     * @param String ip
-     */
-    public void setInstancia(String instancia) {
-        this.instancia = instancia;
-    }
-
-    /**
-     * @return la ip
-     */
     public String getIp() {
         return this.ip;
     }
 
-    /**
-     * @param String ip
-     */
-    public void setIp(String ip) {
+    public void setInstancia(String ins) {
+        this.instancia = ins;
+    }
+    public void setInstancia(String ip) {
         this.ip = ip;
     }
 }

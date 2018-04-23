@@ -24,8 +24,8 @@ importe        float    not null,
 idComercio     char(16) not null,
 numeroTarjeta  char(19) not null references tarjeta,
 fecha          timestamp not null default current_timestamp,
-instancia VARCHAR(50) not null,
-ip VARCHAR(50) not null,
+instancia      VARCHAR(50) not null,
+ip             VARCHAR(50) not null,
 CONSTRAINT     Pago_UC  unique(idTransaccion, idComercio),
 PRIMARY KEY (idAutorizacion)
 );

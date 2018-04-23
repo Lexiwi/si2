@@ -132,7 +132,7 @@ public class VisaDAO extends DBTester {
         String qry = "insert into pago("
                     + "idTransaccion,"
                     + "importe,idComercio,"
-                    + "numeroTarjeta,instancia,ip)"
+                    + "numeroTarjeta)"
                     + " values ("
                     + "'" + pago.getIdTransaccion() + "',"
                     + pago.getImporte() + ","
@@ -143,7 +143,6 @@ public class VisaDAO extends DBTester {
                     + ")";
         return qry;
     }
-
 
     /**
      *  getQryBuscaPagoTransaccion()
@@ -198,7 +197,7 @@ public class VisaDAO extends DBTester {
             /**************************************************/
             stmt = con.createStatement();
             qry = getQryCompruebaTarjeta(tarjeta);
-            errorLog("SEEEELEECT" + qry);                                                    /**********************************/
+            errorLog(qry);                                                    /**********************************/
             rs = stmt.executeQuery(qry);
 
             } /**********************/
@@ -272,7 +271,7 @@ public class VisaDAO extends DBTester {
                pstmt.setDouble(2, pago.getImporte());
                pstmt.setString(3, pago.getIdComercio());
                pstmt.setString(4, pago.getTarjeta().getNumero());
-               pstmt.setString(5, pago.getInstancia());
+               pstmt.setString(5, pago.getInstacia());
                pstmt.setString(6, pago.getIp());
                ret = false;
                if (!pstmt.execute()
@@ -390,7 +389,6 @@ public class VisaDAO extends DBTester {
                 p.setIdAutorizacion(String.valueOf(rs.getInt("idAutorizacion")));
                 p.setInstancia(rs.getString("instancia"));
                 p.setIp(rs.getString("ip"));
-
                 pagos.add(p);
             }
 
