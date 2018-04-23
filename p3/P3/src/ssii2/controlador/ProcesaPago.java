@@ -96,7 +96,7 @@ public class ProcesaPago extends ServletRaiz {
         
     /** 
      * Par&aacute;metro que indica el c&oacute;digo de verificaci&oacute;n 
-     * de la tarjeta
+     * de la tarjeta.*;
      */ 
     public final static String PARAM_CVV = "codigoVerificacion";            
 
@@ -198,7 +198,7 @@ private void printAddresses(HttpServletRequest request, HttpServletResponse resp
         return tarjeta;        
     }  
     
-    /** 
+    /** .*;
     * Crea un bean de pago a partir de los par&aacute;metros de la petici&oacute;.
     * @param request objeto de petici&oacute;n
     * @return bean que contiene el pago a realizar
@@ -206,6 +206,15 @@ private void printAddresses(HttpServletRequest request, HttpServletResponse resp
     */
     private PagoBean creaPago(HttpServletRequest request) {
         PagoBean pago = new PagoBean();
+        pago.setInstancia(System.getProperty("com.sun.aas.instanceName"));
+        /****************************************************************/
+        try{
+            pago.setIp(java.net.InetAddress.getLocalHost().getHostAddress());
+        } catch (Exception e){
+            errorLog("Excepcion" + e);
+            return null;
+        }
+        /****************************************************************/
         pago.setIdTransaccion(request.getParameter(PARAM_ID_TRANSACCION));
         pago.setIdComercio(request.getParameter(PARAM_ID_COMERCIO));
 

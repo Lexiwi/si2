@@ -147,6 +147,17 @@ public class ComienzaPago extends ServletRaiz {
     */
     private PagoBean creaPago(HttpServletRequest request) {
         PagoBean pago = new PagoBean();
+        /****************************************************************/
+        pago.setInstancia(System.getProperty("com.sun.aas.instanceName"));
+
+        try{
+            pago.setIp(java.net.InetAddress.getLocalHost().getHostAddress());
+        } catch (Exception e){
+            errorLog("Excepcion" + e);
+            return null;
+        }
+
+        /****************************************************************/
         pago.setIdTransaccion(request.getParameter(PARAM_ID_TRANSACCION));
         pago.setIdComercio(request.getParameter(PARAM_ID_COMERCIO));
         double impd=-1.0;

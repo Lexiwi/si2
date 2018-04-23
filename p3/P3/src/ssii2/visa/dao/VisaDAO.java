@@ -66,8 +66,8 @@ public class VisaDAO extends DBTester {
 
     private static final String INSERT_PAGOS_QRY =
                     "insert into pago(" +
-                    "idTransaccion,importe,idComercio,numeroTarjeta)" +
-                    " values (?,?,?,?)";
+                    "idTransaccion,importe,idComercio,numeroTarjeta,instancia,ip)" +
+                    " values (?,?,?,?,?,?)";
 
     private static final String SELECT_PAGO_TRANSACCION_QRY =
                     "select idAutorizacion, codRespuesta " +
@@ -132,15 +132,18 @@ public class VisaDAO extends DBTester {
         String qry = "insert into pago("
                     + "idTransaccion,"
                     + "importe,idComercio,"
-                    + "numeroTarjeta)"
+                    + "numeroTarjeta,instancia,ip)"
                     + " values ("
                     + "'" + pago.getIdTransaccion() + "',"
                     + pago.getImporte() + ","
                     + "'" + pago.getIdComercio() + "',"
-                    + "'" + pago.getTarjeta().getNumero() + "'"
+                    + "'" + pago.getTarjeta().getNumero() + "',"
+                    + "'" + pago.getInstancia() + "',"
+                    + "'" + pago.getIp() + "'"
                     + ")";
         return qry;
     }
+
 
     /**
      *  getQryBuscaPagoTransaccion()
@@ -195,7 +198,7 @@ public class VisaDAO extends DBTester {
             /**************************************************/
             stmt = con.createStatement();
             qry = getQryCompruebaTarjeta(tarjeta);
-            errorLog(qry);                                                    /**********************************/
+            errorLog("SEEEELEECT" + qry);                                                    /**********************************/
             rs = stmt.executeQuery(qry);
 
             } /**********************/
@@ -269,6 +272,8 @@ public class VisaDAO extends DBTester {
                pstmt.setDouble(2, pago.getImporte());
                pstmt.setString(3, pago.getIdComercio());
                pstmt.setString(4, pago.getTarjeta().getNumero());
+               pstmt.setString(5, pago.getInstancia());
+               pstmt.setString(6, pago.getIp());
                ret = false;
                if (!pstmt.execute()
                        && pstmt.getUpdateCount() == 1) {
@@ -383,6 +388,8 @@ public class VisaDAO extends DBTester {
                 p.setTarjeta(t);
                 p.setCodRespuesta(rs.getString("codRespuesta"));
                 p.setIdAutorizacion(String.valueOf(rs.getInt("idAutorizacion")));
+                p.setInstancia(rs.getString("instancia"));
+                p.setIp(rs.getString("ip"));
 
                 pagos.add(p);
             }
