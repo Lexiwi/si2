@@ -111,7 +111,7 @@ public class DBTester {
     /**
      * @return the pooled
      */
-    @WebMethod(operationName = "isDirectConnection")
+
     public boolean isDirectConnection() {
         return directConnection;
     }
@@ -119,7 +119,7 @@ public class DBTester {
     /**
      * @param directConnection valor de conexión directa o indirecta
      */
-    @WebMethod(operationName = "setDirectConnection")
+
     public void setDirectConnection(boolean directConnection) {
         this.directConnection = directConnection;
     }

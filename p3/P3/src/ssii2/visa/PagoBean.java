@@ -149,7 +149,7 @@ public class PagoBean {
     public void setInstancia(String ins) {
         this.instancia = ins;
     }
-    public void setInstancia(String ip) {
+    public void setIp(String ip) {
         this.ip = ip;
     }
 }
